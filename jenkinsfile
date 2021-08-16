@@ -1,0 +1,42 @@
+#！groovy
+
+@Library('jenkinslib') _
+
+def tools = new.org.devops.tools()
+
+pipeline {
+    agent any
+    
+    options{
+        timeout(time: 30, unit: 'MINUTES')
+        disableConcurrentBuilds() 
+        skipStagesAfterUnstable() 
+    }
+    tools{
+        git "git_1.8"
+        
+    }
+ 
+    stages {
+        stage('get code') {
+            steps {
+                echo "hello"
+                tools.PrintMes("this is my lib!")
+            }
+        }
+        
+            stage('run build') {
+            steps {
+                sh '''
+                echo "world"
+                '''
+            }
+        }
+        
+            stage('deploy to ecs') {
+                steps{
+                  sh 'echo "good"'
+            }
+        }
+    }
+}
