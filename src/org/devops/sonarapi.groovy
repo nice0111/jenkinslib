@@ -16,3 +16,19 @@ def HttpReq(reqType,reqUrl,reqBody){
     
     return result
 }
+
+
+
+def SerarchProject(projectName){
+    apiUrl = "projects/search?projects=${projectName}"
+    response = HttpReq("GET",apiUrl,'')
+
+    response = readJSON text: """${response.content}"""
+    result = response["paging"]["total"]
+
+    if(result.toString() == "0"){
+       return "false"
+    } else {
+       return "true"
+    }
+}
