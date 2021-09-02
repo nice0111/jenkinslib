@@ -5,7 +5,7 @@ package org.devops
 def HttpReq(reqType,reqUrl,reqBody){
     def sonarServer = "http://10.7.35.74:9000/api"
    
-    result = httpRequest authentication: '87c7e58f-ca5a-436c-a2c0-aee1b88ce693',
+    result = httpRequest authentication: 'sonarqube-Auth',
             httpMode: reqType, 
             contentType: "APPLICATION_JSON",
             consoleLogResponseBody: true,
