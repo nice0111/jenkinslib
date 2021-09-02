@@ -19,7 +19,7 @@ def HttpReq(reqType,reqUrl,reqBody){
 }
 
 
-
+// 搜索项目
 def SerarchProject(projectName){
     apiUrl = "projects/search?projects=${projectName}"
     response = HttpReq("GET",apiUrl,'')
@@ -32,4 +32,11 @@ def SerarchProject(projectName){
     } else {
        return "true"
     }
+}
+
+// 创建项目
+def CreateProject(projectName){
+    apiUrl =  "projects/create?name=${projectName}&project=${projectName}"
+    response = HttpReq("POST",apiUrl,'')
+    println(response)
 }
