@@ -10,3 +10,11 @@ def frontend(env) {
           yarn build:"${env}"
   """
 }
+
+
+def backend() {
+  sh '''
+          cd $WORKSPACE && rm -rf $WORKSPACE/composer.lock
+          /usr/local/bin/composer install
+     '''
+}
