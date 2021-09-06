@@ -11,7 +11,7 @@ def frontend(env) {
   """
 }
 
-
+// 后端项目
 def backend() {
   sh '''
           cd $WORKSPACE && rm -rf $WORKSPACE/composer.lock
