@@ -1,7 +1,7 @@
 package org.devops
 
-//封装HTTP
 
+//封装HTTP
 def HttpReq(reqType,reqUrl,reqBody){
     def sonarServer = "http://10.7.35.74:9000/api"
    
@@ -44,7 +44,6 @@ def CreateProject(projectName){
 
 
 //配置项目质量规则
-
 def ConfigQualityProfiles(projectName,lang,qpname){
     apiUrl = "qualityprofiles/add_project?language=${lang}&project=${projectName}&qualityProfile=${qpname}"
     response = HttpReq("POST",apiUrl,'')
@@ -64,7 +63,6 @@ def GetQualtyGateId(gateName){
 
 
 //配置项目质量阈
-
 def ConfigQualityGates(projectName,gateName){
     gateId = GetQualtyGateId(gateName)
     apiUrl = "qualitygates/select?gateId=${gateId}&projectKey=${projectName}"
@@ -73,9 +71,4 @@ def ConfigQualityGates(projectName,gateName){
 }
 
 
-//配置项目质量规则
-def ConfigQualityProfiles(projectName,lang,qpname){
-    apiUrl = "qualityprofiles/add_project?language=${lang}&project=${projectName}&qualityProfile=${qpname}"
-    response = HttpReq("POST",apiUrl,'')
-    println(response)
-}
+\
