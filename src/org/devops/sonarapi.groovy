@@ -71,4 +71,4 @@ def ConfigQualityGates(projectName,gateName){
 }
 
 
-\
+
