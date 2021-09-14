@@ -23,4 +23,5 @@ def SonarScan(projectName,projectDesc){
             -Dsonar.java.test.binaries=.
         """
     }
+}
     
