@@ -3,7 +3,7 @@ package org.devops
 
 //scan
 // def SonarScan(sonarServer,projectName,projectDesc,projectPath,branchName){   //如果有多sonarqube机器启用此行
-def SonarScan(projectName,projectDesc,projectPath,branchName){  
+def SonarScan(projectName,projectDesc){  
     //定义服务器列表
 //     def servers = ["test":"sonarqube-test","prod":"sonarqube-prod"]
     
