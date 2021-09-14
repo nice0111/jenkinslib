@@ -20,7 +20,7 @@ def SonarScan(projectName,projectDesc,projectPath,branchName){
             -Dsonar.projectName=${projectName} -Dsonar.projectVersion=${sonarDate} -Dsonar.ws.timeout=30 \
             -Dsonar.projectDescription=${projectDesc} \
             -Dsonar.sources=${projectPath} -Dsonar.sourceEncoding=UTF-8  \
-            -Dsonar.java.test.binaries=. -Dsonar.branch.name=${branchName} -X
+            -Dsonar.java.test.binaries=.
         """
     }
     
