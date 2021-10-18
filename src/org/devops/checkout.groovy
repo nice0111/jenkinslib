@@ -1,11 +1,11 @@
 // checkout 
 
-def checkout(branch,credentialsId, url ) {
+def checkout(branch, giturl ) {
   checkout(
             [
             $class: 'GitSCM', branches: [[name: '${branch}']], 
             extensions: [], 
-            userRemoteConfigs: [[credentialsId: '${credentialsId}', 
+            userRemoteConfigs: [[credentialsId: 'devin-001', 
             url: '${url}']]
             ]
   )
