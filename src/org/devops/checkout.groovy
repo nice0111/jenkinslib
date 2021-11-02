@@ -7,7 +7,7 @@ def checkout(branch, giturl ) {
             [
             $class: 'GitSCM', branches: [[name: '${branch}']], 
             extensions: [], 
-            userRemoteConfigs: [[credentialsId: '', 
+            userRemoteConfigs: [[credentialsId: 'github-nice', 
             url: '${giturl}']]
             ]
   )
